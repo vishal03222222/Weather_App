@@ -30,6 +30,7 @@ const WeatherApp = () => {
         windSpeed: data.wind.speed,
         temperature: Math.floor(data.main.temp),
         location: data.name,
+        country:data.sys.country,
       });
       setError("");
     } catch (error) {
@@ -49,6 +50,7 @@ const WeatherApp = () => {
   }, []);
 
   return (
+    
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "linear-gradient(135deg, #4facfe,rgb(254, 178, 0))", animation: "fadeIn 2s ease-in-out" }}>
       <div style={{ width: "320px", background: "linear-gradient(135deg, #4facfe,rgb(0, 38, 254))", borderRadius: "20px", padding: "20px", color: "white", textAlign: "center", boxShadow: "0px 4px 10px rgba(0,0,0,0.3)" }}>
         <h1 style={{ marginBottom: "10px" }}>Weather App</h1>
@@ -61,19 +63,24 @@ const WeatherApp = () => {
         </div>
         {weatherData ? (
           <>
-            <img src={clear_icon} alt="weather-icon" style={{ width: "50px", marginTop: "10px" }} /> <br />
-            <div style={{ fontSize: "70px", display:"flex", fontWeight: "bold", borderRadius: "10px", display: "inline-block" }}>{weatherData.temperature}°C
-            </div>
             <h2 style={{ marginTop: "10px", fontSize: "24px", display: "flex", justifyContent: "center", alignItems: "center", gap: "8px" }}>
-  📍 {weatherData.location}
+  📍 {weatherData.location},{weatherData.country}
 </h2>
+           <div style={{ display: "flex",fontWeight: "bold", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+           <img src={clear_icon} alt="weather-icon" style={{ width: "50px" }} /> 
+           <p >{weatherData.temperature}°C</p>
+           </div>
+           
+          
 
             
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+            <div style={{ display: "flex",fontWeight: "bold", justifyContent: "center", alignItems: "center", gap: "10px" }}>
               <img src={humidity_icon} alt="humidity" style={{ width: "50px" }} />
               <p>{weatherData.humidity}% Humidity</p>
+              
+
             </div>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", marginTop: "5px" }}>
+            <div style={{ display: "flex",fontWeight: "bold", justifyContent: "center", alignItems: "center", gap: "10px", marginTop: "5px" }}>
               <img src={wind_icon} alt="wind" style={{ width: "50px" }} />
               <p>{weatherData.windSpeed} km/h Wind Speed</p>
             </div>
