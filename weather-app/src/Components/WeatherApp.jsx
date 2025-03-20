@@ -51,8 +51,8 @@ const WeatherApp = () => {
 
   return (
     
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "linear-gradient(135deg, #4facfe,rgb(254, 178, 0))", animation: "fadeIn 2s ease-in-out" }}>
-      <div style={{ width: "320px", background: "linear-gradient(135deg, #4facfe,rgb(0, 38, 254))", borderRadius: "20px", padding: "20px", color: "white", textAlign: "center", boxShadow: "0px 4px 10px rgba(0,0,0,0.3)" }}>
+    <div style={{ width: "320px", background: "linear-gradient(135deg, #4facfe,rgb(0, 38, 254))", borderRadius: "20px", padding: "20px", color: "white", textAlign: "center", boxShadow: "0px 4px 10px rgba(0,0,0,0.3)" }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "linear-gradient(135deg, #4facfe,rgb(254, 178, 0))", animation: "fadeIn 2s ease-in-out" }}>
         <h1 style={{ marginBottom: "10px" }}>Weather App</h1>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(255, 255, 255, 0.2)", padding: "8px 12px", borderRadius: "20px" }}>
           <input ref={inputRef} type="text" placeholder="Enter City" style={{ width: "70%", background: "transparent", border: "none", color: "white", outline: "none" }} />
